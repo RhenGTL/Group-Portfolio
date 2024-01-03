@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+    {% block head %}
+    <title>Works</title>
+    <link rel="stylesheet" href="/static/menu.css">
+    {% endblock %}
+    {% block navbar %}
+    <li><a href="/">GROUP 2: PORTFOLIO</a></li>
+    <div>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/works" class="works-link">WORKS</a></li>
+        <li><a href="/about">ABOUT US</a></li>
+    </div>
+    {% endblock %}
+    {% block inside_second_division %}
+    <div class="inside-second-division">
+        <h1>Our Works</h1>
+        <ul>
+            <li><a href="/uppercase">UPPERCASE CONVERTER</a></li>
+            <li><a href="/circle_area">AREA OF A CIRCLE</a></li>
+            <li><a href="/triangle_area">AREA OF A TRIANGLE</a></li>
+            <li><a href="/search_algo">SEARCH ALGORITHMS</a></li>
+            <li><a href="/merge_list">MERGE LINKED LIST</a></li>
+            <li><a href="/infix_postfix">INFIX TO POSTFIX</a></li>
+            <li><a href="/queue_dequeue">QUEUE AND DE-QUEUE</a></li>
+        </ul>
+    </div>
+    {% endblock %}

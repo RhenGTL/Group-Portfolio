@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+    {% block head %}
+    <title>Faustino's Profile</title>
+    <link rel="stylesheet" href="/static/profile.css">
+    {% endblock %}
+    {% block navbar %}
+    <li><a href="/">GROUP 2: PORTFOLIO</a></li>
+    <div>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/works">WORKS</a></li>
+        <li><a href="/about">ABOUT US</a></li>
+    </div>
+    {% endblock %}
+    {% block profile %}
+    <img src="/static/faustino.jpg" alt="Faustino's Picture">
+    {% endblock %}
+    {% block inside_second_division %}
+    <div class="inside-second-division">
+        <div id="slider" style="width: 100%; overflow: hidden;">
+            <div id="slider-content">
+                <div class="content">
+                    <h1>Profile</h1>
+                    <p>
+                        Name: Jason Hans K. Faustino <br> 
+                        Course: Bachelor of Science in Computer Engineering <br> 
+                        Section: BSCPE 2-6 <br>  
+                        Subject: Data Structures and Algorithms <br> 
+                        Motto: "Time is GOLD, when you waste time you are wasting MONEY."
+                    </p>
+                </div>
+                <div class="content">
+                    <h1>Contact</h1>
+                    <p>
+                        Email: <a href="mailto:jasonfaustino45@gmail.com">jasonfaustino45@gmail.com</a> <br> 
+                        Mobile Number: +63 917-843-6853 <br> 
+                        Address: Naga Pael, Brgy. Culiat, Quezon City <br> 
+                        Facebook: <a href="https://www.facebook.com/jason.faustino.10/">Jason Faustino</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button onclick="slide(0)">&laquo;</button>
+            <button onclick="slide(1)">&raquo;</button>
+        </div>
+    </div>
+    {% endblock %}

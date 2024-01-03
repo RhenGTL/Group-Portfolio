@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Algorithms</title>
+    <link rel="stylesheet" href="/static/search_algo.css">
+</head>
+<body>
+    <div class="bgAnimation" id="bgAnimation">
+        <div class="backgroundAmim">
+            
+        </div>
+    </div>
+
+    <div class="container">
+        <nav>
+            <ul>
+                    <li><a href="/"><span>SEARCH</span> ALGORITHMS</a></li>
+                    <div>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/works">WORKS</a></li>
+                        <li><a href="/about">ABOUT US</a></li>
+                    </div>
+            </ul>
+        </nav>
+
+        <section>
+            <div class="dataset">
+                <form method="POST">
+                    <label class="array_label">== DATASET ==</label>
+                    <textarea name="array" id="array" placeholder="Enter integers separated by commas (or generate random dataset)" required>{{ dataset }}</textarea>
+                    
+                    <div class="buttons">
+                        <label class="size_label">Size:
+                            <select name="size" id="size">
+                                <option value="100" {% if size == 100 %}selected{% endif %}>100</option>
+                                <option value="1000" {% if size == 1000 %}selected{% endif %}>1000</option>
+                                <option value="10000" {% if size == 10000 %}selected{% endif %}>10000</option>
+                            </select>
+                        </label> 
+                        <div>
+                            <input type="submit" name="edit" value="Edit">  
+                            <input type="submit" name="generate" value="Generate">
+                        </div>
+                    </div>
+
+                    <div class="algorithm">
+                        <label class="search_type_label">Algorithm:
+                            <select name="search_type" id="search_type">
+                                <option value="linear" {% if search_type == "linear" %}selected{% endif %}>Linear Search</option>
+                                <option value="binary" {% if search_type == "binary" %}selected{% endif %}>Binary Search</option>
+                                <option value="ternary" {% if search_type == "ternary" %}selected{% endif %}>Ternary Search</option>
+                                <option value="exponential" {% if search_type == "exponential" %}selected{% endif %}>Exponential Search </option>
+                                <option value="interpolation" {% if search_type == "interpolation" %}selected{% endif %}>Interpolation Search </option>
+                                <option value="jump" {% if search_type == "jump" %}selected{% endif %}>Jump Search</option>
+                            </select>
+                        </label>  
+                        <div>
+                            <input type="number" name="target" id="target" placeholder="Target" value="{{ target }}">
+                            <input type="submit" name="search" value="Search">
+                        </div> 
+                    </div>
+                </form>
+                {% if request.method == 'POST' and 'search' in request.form %}
+                    {% if error %}
+                        <div class="alert_failed" role="alert">
+                            {{ error }}
+                        </div>
+                    {% elif result != -1 %}
+                        <div class="alert_success" role="alert">
+                            Target ({{ target }}) found at index {{ result }} using {{ search_type }} method in {{ execution_time }} milliseconds.
+                        </div>
+                    {% else %}
+                        <div class="alert_not_found" role="alert">
+                            Target ({{ target }}) not found in dataset using {{ search_type }} method.
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </section>
+    </div>
+    <script src="/static/search_algo.js"></script>   
+</body>
+</html>

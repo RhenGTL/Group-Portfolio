@@ -1,0 +1,149 @@
+{% extends "index.html" %}
+    {% block head %}
+    <title>Queue and Dequeue</title>
+    <link rel="stylesheet" href="/static/works.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% endblock %}
+    {% block navbar %}
+    <li><a href="/">GROUP 2: PORTFOLIO</a></li>
+    <div>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/works" class="works-link">WORKS</a></li>
+        <li><a href="/about">ABOUT US</a></li>
+    </div>
+    {% endblock %}
+    {% block inside_second_division %}
+    <div class="inside-second-division">
+        <div id="slider" style="width: 100%; overflow: hidden;">
+            <div id="slider-content">
+                <div class="content">
+                    <h1>Queue</h1>
+                    <form action="/queue_dequeue" method="post">
+                        <input type="text" id="queue_input" name="queue_input" class="input" placeholder="Enter data here." >
+                        <div class="button-container">
+                            <button type="button" onclick="location.href='/works'" class="input-button">Back</button>
+                            <select name="queue_action" id="queue_action">
+                                <option value="" selected disabled>Select action...</option>
+                                <option value="push">Push</option>
+                                <option value="pop">Pop</option>
+                                <option value="peek">Peek</option>
+                                <option value="queue_size">Size</option>
+                            </select>
+                            <input type="submit" name="queue_submit" value="Proceed" class="input-button">
+                        </div>
+                    </form>
+                    {% if queue_result %}
+                        {% if queueAction == None %}
+                        <h3 class="result"><span style="color: lightcoral">{{ queue_result }}</span></h3>
+                        {% elif queueAction == 'push' %}
+                            {% if queueInput != "" %}
+                            <h3 class="result"><span style="color: lightgreen">{{ queue_result }}</span> pushed</h3>
+                            {% else %}
+                            <h3 class="result"><span style="color: lightcoral">{{ queue_result }}</span></h3>
+                            {% endif %}
+                        {% elif queueAction == 'pop' %}
+                            {% if queue_result != "List is empty." %}
+                            <h3 class="result"><span style="color: lightgreen">{{ queue_result }}</span> popped</h3>
+                            {% else %}
+                            <h3 class="result"><span style="color: lightcoral">{{ queue_result }}</span></h3>
+                            {% endif %}
+                        {% elif queueAction == 'peek' %}
+                            {% if queue_result != "List is empty." %}
+                            <h3 class="result"><span style="color: lightgreen">{{ queue_result }}</span> peeked</h3>
+                            {% else %}
+                            <h3 class="result"><span style="color: lightcoral">{{ queue_result }}</span></h3>
+                            {% endif %}
+                        {% elif queueAction == 'queue_size' %}
+                            {% if queue_result != "List is empty." %}
+                            <h3 class="result">Size: <span style="color: lightgreen">{{ queue_result }}</span></h3>
+                            {% else %}
+                            <h3 class="result"><span style="color: lightcoral">{{ queue_result }}</span></h3>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                </div>
+
+                <div class="content">
+                    <h1>De-queue</h1>
+                    <form action="/queue_dequeue" method="post">
+                        <input type="text" id="dequeue_input" name="dequeue_input" class="input" placeholder="Enter data here.">
+                        <div class="button-container">
+                            <button type="button" onclick="location.href='/works'" class="input-button">Back</button>
+                            <select name="dequeue_action" id="dequeue_action">
+                                <option value="" selected disabled>Select action...</option>
+                                <option value="push_front">Push Front</option>
+                                <option value="push_back">Push Back</option>
+                                <option value="pop_front">Pop Front</option>
+                                <option value="pop_back">Pop Back</option>
+                                <option value="peek_front">Peek Front</option>
+                                <option value="peek_back">Peek Back</option>
+                                <option value="dequeue_size">Size</option>
+                            </select>
+                            <input type="submit" name="dequeue_submit" value="Proceed" class="input-button">
+                        </div>
+                    </form>
+                    {% if dequeue_result %}
+                        {% if dequeueAction == None %}
+                        <h3 class="result"><span style="color: lightcoral">{{ dequeue_result }}</span></h3>
+                        {% elif dequeueAction == 'push_front' %}
+                            {% if dequeueInput != "" %}
+                            <h3 class="result"><span style="color: lightgreen">{{ dequeue_result }}</span> pushed at front</h3>
+                            {% else %}
+                            <h3 class="result"><span style="color: lightcoral">{{ dequeue_result }}</span></h3>
+                            {% endif %}
+                        {% elif dequeueAction == 'push_back' %}
+                            {% if dequeueInput != "" %}
+                            <h3 class="result"><span style="color: lightgreen">{{ dequeue_result }}</span> pushed at back</h3>
+                            {% else %}
+                            <h3 class="result"><span style="color: lightcoral">{{ dequeue_result }}</span></h3>
+                            {% endif %}
+                        {% elif dequeueAction == 'pop_front' %}
+                            {% if dequeue_result != "List is empty." %}
+                            <h3 class="result"><span style="color: lightgreen">{{ dequeue_result }}</span> popped at front</h3>
+                            {% else %}
+                            <h3 class="result"><span style="color: lightcoral">{{ dequeue_result }}</span></h3>
+                            {% endif %}
+                        {% elif dequeueAction == 'pop_back' %}
+                            {% if dequeue_result != "List is empty." %}
+                            <h3 class="result"><span style="color: lightgreen">{{ dequeue_result }}</span> popped at back</h3>
+                            {% else %}
+                            <h3 class="result"><span style="color: lightcoral">{{ dequeue_result }}</span></h3>
+                            {% endif %}
+                        {% elif dequeueAction == 'peek_front' %}
+                            {% if dequeue_result != "List is empty." %}
+                            <h3 class="result"><span style="color: lightgreen">{{ dequeue_result }}</span> peeked at front</h3>
+                            {% else %}
+                            <h3 class="result"><span style="color: lightcoral">{{ dequeue_result }}</span></h3>
+                            {% endif %}
+                        {% elif dequeueAction == 'peek_back' %}
+                            {% if dequeue_result != "List is empty." %}
+                            <h3 class="result"><span style="color: lightgreen">{{ dequeue_result }}</span> peeked at back</h3>
+                            {% else %}
+                            <h3 class="result"><span style="color: lightcoral">{{ dequeue_result }}</span></h3>
+                            {% endif %}
+                        {% elif dequeueAction == 'dequeue_size' %}
+                            {% if dequeue_result != "List is empty." %}
+                            <h3 class="result">Size: <span style="color: lightgreen">{{ dequeue_result }}</span></h3>
+                            {% else %}
+                            <h3 class="result"><span style="color: lightcoral">{{ dequeue_result }}</span></h3>
+                            {% endif %}
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="slider-button">
+            <button class="arrow" onclick="slide(0)">&laquo;</button>
+            <button class="arrow" onclick="slide(1)">&raquo;</button>
+        </div>
+    </div>
+
+    {% block script_js %}
+    <script src="/static/queue_dequeue.js"></script>
+    <script>
+        var requestMethod = "{{ request_method }}";
+    </script>
+    {% endblock %}
+    {% endblock %}
+
+ 

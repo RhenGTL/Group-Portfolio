@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+    {% block head %}
+    <title>Merge Linked List</title>
+    <link rel="stylesheet" href="/static/works.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% endblock %}
+    {% block navbar %}
+    <li><a href="/">GROUP 2: PORTFOLIO</a></li>
+    <div>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/works" class="works-link">WORKS</a></li>
+        <li><a href="/about">ABOUT US</a></li>
+    </div>
+    {% endblock %}
+    {% block inside_second_division %}
+    <div class="inside-second-division">
+        <h1>Merge Linked List</h1>
+        <form action="/merge_list" method="post">
+            <textarea name="list1" id="list1" class="text_area" cols="30" rows="5" placeholder="Enter list 1 (separated by spaces)"></textarea>
+            <textarea name="list2" id="list2" class="text_area" cols="30" rows="5" placeholder="Enter list 2 (separated by spaces)"></textarea>
+            <div class="button-container">
+                <button type="button" onclick="location.href='/works'" class="input-button">Back</button>
+                <input type="submit" value="Merge" class="input-button">
+            </div>
+        </form>
+        {% if result %}
+        <h2 class="result-label">Result:</h2>
+        <h3" class="result">{{ result }}</h3>
+        {% endif %}
+    </div>
+    {% endblock %}
+    

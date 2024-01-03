@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+    {% block head %}
+    <title>Gustilo's Profile</title>
+    <link rel="stylesheet" href="/static/profile.css">
+    {% endblock %}
+    {% block navbar %}
+    <li><a href="/">GROUP 2: PORTFOLIO</a></li>
+    <div>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/works">WORKS</a></li>
+        <li><a href="/about">ABOUT US</a></li>
+    </div>
+    {% endblock %}
+    {% block profile %}
+    <img src="/static/gustilo.jpg" alt="Gustilo's Picture">
+    {% endblock %}
+    {% block inside_second_division %}
+    <div class="inside-second-division">
+        <div id="slider" style="width: 100%; overflow: hidden;">
+            <div id="slider-content">
+                <div class="content">
+                    <h1>Profile</h1>
+                    <p>
+                        Name: Rhenier R. Gustilo <br> 
+                        Course: Bachelor of Science in Computer Engineering <br> 
+                        Section: BSCPE 2-6 <br>  
+                        Subject: Data Structures and Algorithms <br> 
+                        Motto: "Reduce the complexity to increase the efficiency."
+                    </p>
+                </div>
+                <div class="content">
+                    <h1>Contact</h1>
+                    <p>
+                        Email: <a href="mailto:rheniergustilo06@gmail.com">rheniergustilo06@gmail.com</a> <br> 
+                        Phone: +63 (2) 8922-5850 <br> 
+                        Mobile: +63 960-639-8211 <br>  
+                        Address: 107 B. Cruz St., Tangos, Navotas, Metro Manila <br> 
+                        Facebook: <a href="https://www.facebook.com/Rhenier.Ruiz.Gustilo/">Rhenier Ruiz Gustilo</a>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button onclick="slide(0)">&laquo;</button>
+            <button onclick="slide(1)">&raquo;</button>
+        </div>
+    </div>
+    {% endblock %}

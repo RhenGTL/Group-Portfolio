@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+    {% block head %}
+    <title>Uppercase Converter</title>
+    <link rel="stylesheet" href="/static/works.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% endblock %}
+    {% block navbar %}
+    <li><a href="/">GROUP 2: PORTFOLIO</a></li>
+    <div>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/works" class="works-link">WORKS</a></li>
+        <li><a href="/about">ABOUT US</a></li>
+    </div>
+    {% endblock %}
+    {% block inside_second_division %}
+    <div class="inside-second-division">
+        <h1>Uppercase Converter</h1>
+        <form action="/uppercase" method="post">
+            <textarea name="inputString" id="inputString" class="text_area" cols="30" rows="10" placeholder="Enter or paste your text here."></textarea>
+            <div class="button-container">
+                <button type="button" onclick="location.href='/works'" class="input-button">Back</button>
+                <input type="submit" value="Convert" class="input-button">
+            </div>
+        </form>
+        {% if result %}
+        <h2 class="result-label">Result:</h2>
+        <button id="result" class="result-button">{{ result }}</button>
+        {% endif %}
+    </div>
+    {% endblock %}

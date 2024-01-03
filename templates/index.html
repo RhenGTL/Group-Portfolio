@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %}
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/style.css">
+    {% endblock %}
+</head>
+<body>
+
+    <nav>
+        <ul>
+            {% block navbar %}
+                <li><a href="/">GROUP 2: PORTFOLIO</a></li>
+                <div>
+                    <li><a href="/" class="home-link">HOME</a></li>
+                    <li><a href="/works">WORKS</a></li>
+                    <li><a href="/about">ABOUT US</a></li>
+                </div>
+            {% endblock %}
+        </ul>
+    </nav>
+    <div class="first-division"></div>
+    <div class="img-container">
+        {% block profile %}
+        <a href="/ardon">
+            <div class="img-label">
+                <img src="/static/ardon.jpg" alt="Ardon's Picture">
+                <p>Fort Fredrick C. Ardon</p>
+            </div>
+        </a>
+        <a href="/austria">
+            <div class="img-label">
+                <img src="/static/austria.png" alt="Austria's Picture">
+                <p>John Gwen Isaac D. Austria</p>
+            </div>
+        </a>
+        <a href="/faustino">
+            <div class="img-label">
+                <img src="/static/faustino.jpg" alt="Faustino's Picture">
+                <p>Jason Hans K. Faustino</p>
+            </div>
+        </a>
+        <a href="/garcia">
+            <div class="img-label">
+                <img src="/static/garcia.jpg" alt="Garcia's Picture">
+                <p>Crisanto Lemuel Garcia</p>
+            </div>
+        </a>
+        <a href="/gustilo">
+            <div class="img-label">
+                <img src="/static/gustilo.jpg" alt="Gustilo's Picture">
+                <p>Rhenier R. Gustilo</p>
+            </div>
+        </a>
+        <a href="/melitante">
+            <div class="img-label">
+                <img src="/static/melitante.jpg" alt="Melitante's Picture">
+                <p>Aron G. Melitante</p>
+            </div>
+        </a>
+        <a href="/moreno">
+            <div class="img-label">
+                <img src="/static/moreno.jpg" alt="Moreno's Picture">
+                <p>Tristan Kent A. Moreno</p>
+            </div>
+        </a>
+        <a href="/ramos">
+            <div class="img-label">
+                <img src="/static/ramos.png" alt="Ramos' Picture">
+                <p>Romulo D. Ramos Jr.</p>
+            </div>
+        </a>
+        {% endblock %}
+    </div>
+    <div class="second-division">
+        {% block inside_second_division %}
+            <div class="inside-second-division">
+                <h1>Hi, We Are <br> the Group Two.</h1>
+                <p>Building Dreams, <br> One Algorithm at a Time.</p>
+                <ul>
+                    <li><a href="/works">WORKS</a></li>
+                    <li><a href="/about">ABOUT US</a></li>
+                </ul>
+            </div>
+        {% endblock %}
+        <div class="copy-container">
+            <p>&copy; 2023 Developed and published by Group Two</p>
+        </div>
+    </div>
+    {% block top_division %}
+    {% endblock %}
+
+    {% block script_js %}
+    <script src="/static/script.js"></script>
+    {% endblock %}
+</body>
+
+</html>

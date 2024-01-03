@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caudex&display=swap');
+
+body {
+    display: flex;
+    margin: 0;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    position: fixed;
+    width: 95%;
+    top: 15px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.0);
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+nav ul div {
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li {
+    padding: 15px;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.profile-link, .home-link, .works-link, .contact-link {
+    color: #fceb86;
+}
+
+.first-division {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh; 
+    width: 50%;
+    background-image: url('/static/background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.img-container {
+    position: absolute;
+    top: 11%;
+    display: grid;
+    grid-template-columns: repeat(2, 290px);
+    grid-template-rows: repeat(4, 210px);
+    grid-column-gap: 110px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 50%;
+}
+
+.img-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.img-label img {
+    width: 130px;
+    height: 130px;
+    border-radius: 30px;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+}
+
+.img-label p {
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    text-shadow: -1.5px -1.5px 1px black, 1.5px -1.5px 1px black, -1.5px 1.5px 1px black, 1.5px 1.5px 1px black;
+}
+
+.img-label:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-label:hover img {
+    box-shadow: 0 0 20px 5px rgba(252, 235, 134, 0.5);
+}
+
+.img-label:hover p {
+    color: black;
+    text-shadow: -1.5px -1.5px 1px #fceb86, 1.5px -1.5px 1px #fceb86, -1.5px 1.5px 1px #fceb86, 1.5px 1.5px 1px #fceb86;
+}
+
+.second-division {
+    background-color: #08406d; 
+    height: 100vh; 
+    width: 50%;
+}
+
+.inside-second-division {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#slider-content {
+    display: flex;
+    width: 200%;
+    transition: margin-left 0.5s;
+    visibility: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+}
+
+.arrow {
+    display: block;
+    color: white;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 75px;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    text-shadow: -1.5px -1.5px 1px black, 1.5px -1.5px 1px black, -1.5px 1.5px 1px black, 1.5px 1.5px 1px black;
+}
+
+.arrow:hover {
+    color: black;
+    text-shadow: -1.5px -1.5px 1px #fceb86, 1.5px -1.5px 1px #fceb86, -1.5px 1.5px 1px #fceb86, 1.5px 1.5px 1px #fceb86;
+}
+
+.slider-button {
+    display: flex; 
+    width: 626px;
+    justify-content: space-between;
+    visibility: hidden;
+}
+
+.inside-second-division h1 {
+    font-family: 'Caudex', serif;
+    font-size: 55px;
+    color: white;
+    font-weight: 100;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 600px;
+    text-align: center;
+}
+
+.inside-second-division p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 300;
+    text-align: justify;
+    width: 600px;
+    line-height: 2;
+    background-color: #1f1f1f;
+    border: 3px solid #fceb86;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.inside-second-division p a {
+    color: #05bdee;
+    text-decoration: none;
+}
+
+.inside-second-division ul {
+    list-style-type: none;
+    padding: 0;
+    width: 600px;
+    margin: 0;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inside-second-division ul li {
+    width: 449px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+.inside-second-division ul li a {
+    display: block;
+    padding: 15px 0;
+    border-radius: 10px;
+    border: 3px solid #fceb86;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: #1f1f1f;;
+}
+
+.inside-second-division ul li a:hover {
+    background-color: #fceb86;
+    color: #1f1f1f;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.text_area {
+    color: white;
+    background-color: #1f1f1f;
+    border: 1px solid #fceb86;
+    border-radius: 10px;
+    width: 578px;
+    padding: 10px;
+    margin-top: 20px;
+    outline: none;
+}
+
+.text_area:focus {
+    border: 1px solid #fceb86;
+}
+
+.input {
+    font-size: 14px;
+    color: white;
+    background-color: #1f1f1f;
+    border: 1px solid #fceb86;
+    border-radius: 10px;
+    width: 200px;
+    padding: 10px;
+    margin-top: 20px;
+    outline: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+
+#queue_action {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    background-color: #1f1f1f;
+    border: 1px solid #fceb86;
+    border-radius: 10px;
+    width: 150px;
+    padding: 10px;
+    margin-top: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+#dequeue_action {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    background-color: #1f1f1f;
+    border: 1px solid #fceb86;
+    border-radius: 10px;
+    width: 150px;
+    padding: 10px;
+    margin-top: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.input-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    background-color: #1f1f1f;
+    border: 1px solid #fceb86;
+    border-radius: 10px;
+    width: 100px;
+    padding: 10px;
+    margin-top: 20px;
+    outline: none;;
+}
+
+.input-button:hover {
+    background-color: #fceb86;
+    color: #1f1f1f;
+}
+
+.result-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    width: 600px;
+    height: 172px;
+    background-color: #1f1f1f;
+    border: 1px solid #fceb86;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    outline: none;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.result-button:hover {
+    background-color: #fceb86;
+    color: #1f1f1f;
+}
+
+.result {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    max-width: 600px;
+    background-color: #1f1f1f;
+    border: 1px solid #fceb86;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    outline: none;
+}
+
+.result-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.copy-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.copy-container p {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 14px;
+    font-weight: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 45px;
+}
+
+.top-division {
+    position: absolute;
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+.first-division, .second-division {
+    position: relative;
+    z-index: 0;
+}
+

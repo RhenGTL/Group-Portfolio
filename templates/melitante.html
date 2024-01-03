@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+    {% block head %}
+    <title>Melitante's Profile</title>
+    <link rel="stylesheet" href="/static/profile.css">
+    {% endblock %}
+    {% block navbar %}
+    <li><a href="/">GROUP 2: PORTFOLIO</a></li>
+    <div>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/works">WORKS</a></li>
+        <li><a href="/about">ABOUT US</a></li>
+    </div>
+    {% endblock %}
+    {% block profile %}
+    <img src="/static/melitante.jpg" alt="Melitante's Picture">
+    {% endblock %}
+    {% block inside_second_division %}
+    <div class="inside-second-division">
+        <div id="slider" style="width: 100%; overflow: hidden;">
+            <div id="slider-content">
+                <div class="content">
+                    <h1>Profile</h1>
+                    <p>
+                        Name: Aron G. Melitante <br> 
+                        Course: Bachelor of Science in Computer Engineering <br> 
+                        Section: BSCPE 2-6 <br>  
+                        Subject: Data Structures and Algorithms <br> 
+                        Motto: "I can't start a day without coffee."
+                    </p>
+                </div>
+                <div class="content">
+                    <h1>Contact</h1>
+                    <p>
+                        Email: <a href="mailto:gemaoaron@gmail.com">gemaoaron@gmail.com</a> <br> 
+                        Mobile Number: +63 947-221-2168 <br>  
+                        Address: 081 Halili Rd. Brgy. Grotto Graceville, San Jose Del Monte, Bulacan <br> 
+                        Facebook: <a href="https://www.facebook.com/profile.php?id=100025416333251">Aron Gemao Melitante</a>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button onclick="slide(0)">&laquo;</button>
+            <button onclick="slide(1)">&raquo;</button>
+        </div>
+    </div>
+    {% endblock %}

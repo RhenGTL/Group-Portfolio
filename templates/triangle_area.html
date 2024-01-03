@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+    {% block head %}
+    <title>Area of Triangle Calculator</title>
+    <link rel="stylesheet" href="/static/works.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% endblock %}
+    {% block navbar %}
+    <li><a href="/">GROUP 2: PORTFOLIO</a></li>
+    <div>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/works" class="works-link">WORKS</a></li>
+        <li><a href="/about">ABOUT US</a></li>
+    </div>
+    {% endblock %}
+    {% block inside_second_division %}
+    <div class="inside-second-division">
+        <h1>Area of Triangle Calculator</h1>
+        <form action="/triangle_area" method="post">
+            <input type="number" step="any" id="base" name="base" placeholder="Enter a base." class="input">
+            <input type="number" step="any" id="height" name="height" placeholder="Enter a height." class="input">
+            <div class="button-container">
+                <button type="button" onclick="location.href='/works'" class="input-button">Back</button>
+                <input type="submit" value="Calculate" class="input-button">
+            </div>
+        </form>
+        {% if result %}
+        <h2 class="result-label">Result:</h2>
+        <h3" class="result">{{ result }}</h3>
+        {% endif %}
+    </div>
+    {% endblock %}
+    

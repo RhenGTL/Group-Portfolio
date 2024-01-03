@@ -1,0 +1,48 @@
+{% extends "index.html" %}
+    {% block head %}
+    <title>Austria's Profile</title>
+    <link rel="stylesheet" href="/static/profile.css">
+    {% endblock %}
+    {% block navbar %}
+    <li><a href="/">GROUP 2: PORTFOLIO</a></li>
+    <div>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/works">WORKS</a></li>
+        <li><a href="/about">ABOUT US</a></li>
+    </div>
+    {% endblock %}
+    {% block profile %}
+    <img src="/static/austria.png" alt="Austria's Picture">
+    {% endblock %}
+    {% block inside_second_division %}
+    <div class="inside-second-division">
+        <div id="slider" style="width: 100%; overflow: hidden;">
+            <div id="slider-content">
+                <div class="content">
+                    <h1>Profile</h1>
+                    <p>
+                        Name: John Gwen Isaac D. Austria <br> 
+                        Course: Bachelor of Science in Computer Engineering <br> 
+                        Section: BSCPE 2-6 <br>  
+                        Subject: Data Structures and Algorithms <br> 
+                        Motto: "Enjoy life, make every second worth it."
+                    </p>
+                </div>
+                <div class="content">
+                    <h1>Contact</h1>
+                    <p>
+                        Email: <a href="mailto:johngwenisaacaustria@gmail.com">johngwenisaacaustria@gmail.com</a> <br> 
+                        Mobile Number: +63 951-134-1737 <br> 
+                        Facebook: <a href="https://www.facebook.com/isaacjga">John Gwen Isaac Austria</a> <br> 
+                        Instagram: <a href="https://www.instagram.com/_jmbzc/">_jmbzc</a> <br> 
+                        X: <a href="https://twitter.com/_jmbzc">Isaac</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button onclick="slide(0)">&laquo;</button>
+            <button onclick="slide(1)">&raquo;</button>
+        </div>
+    </div>
+    {% endblock %}

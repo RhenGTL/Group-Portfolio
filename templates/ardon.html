@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+    {% block head %}
+    <title>Ardon's Profile</title>
+    <link rel="stylesheet" href="/static/profile.css">
+    {% endblock %}
+    {% block navbar %}
+    <li><a href="/">GROUP 2: PORTFOLIO</a></li>
+    <div>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/works">WORKS</a></li>
+        <li><a href="/about">ABOUT US</a></li>
+    </div>
+    {% endblock %}
+    {% block profile %}
+    <img src="/static/ardon.jpg" alt="Ardon's Picture">
+    {% endblock %}
+    {% block inside_second_division %}
+    <div class="inside-second-division">
+        <div id="slider" style="width: 100%; overflow: hidden;">
+            <div id="slider-content">
+                <div class="content">
+                    <h1>Profile</h1>
+                    <p>
+                        Name: Fort Fredrick C. Ardon <br> 
+                        Age: 20 <br> 
+                        School: Polytechnic University of the Philippines <br> 
+                        Course: Bachelor of Science in Computer Engineering <br> 
+                        Section: BSCPE 2-6 <br> 
+                        Subject: Data Structures and Algorithms <br> 
+                        Hobbies: Basketball, Billiards, Reading, Watching Movies <br> 
+                        Motto: "It's better to die than to live without passion."
+                    </p>
+                </div>
+                <div class="content">
+                    <h1>Contact</h1>
+                    <p>
+                        Email: <a href="mailto:ardonfort@gmail.com">ardonfort@gmail.com</a> <br> 
+                        Mobile Number: +63 922-328-5341 <br> 
+                        Address: 24-A Lourdes St., Brgy. San Vicente Diliman, QC <br> 
+                        Facebook: <a href="https://www.facebook.com/fort.ardon">Fort Ardon</a> <br> 
+                        Instagram: <a href="https://www.instagram.com/fourth_ar/">Fourth</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button onclick="slide(0)">&laquo;</button>
+            <button onclick="slide(1)">&raquo;</button>
+        </div>
+    </div>
+    {% endblock %}
